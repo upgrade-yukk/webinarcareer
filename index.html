@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinar Eksklusif — Turning Passion Into Action: shape your future with the right career</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="cursorTrail" class="cursor-trail" aria-hidden="true"></div>
+
+  <div class="page-atmosphere" aria-hidden="true">
+    <div class="page-atmosphere__wash"></div>
+    <div class="page-atmosphere__orb page-atmosphere__orb--1"></div>
+    <div class="page-atmosphere__orb page-atmosphere__orb--2"></div>
+    <div class="page-atmosphere__orb page-atmosphere__orb--3"></div>
+    <svg class="page-atmosphere__floral page-atmosphere__floral--1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="rgba(212, 132, 154, 0.22)" stroke-width="0.8" class="atmosphere-spin">
+        <path d="M100 28c18 32 18 48 0 72c-18-24-18-40 0-72z"/>
+        <path d="M100 28c-18 32-18 48 0 72c18-24 18-40 0-72z" transform="rotate(72 100 100)"/>
+        <path d="M100 28c-18 32-18 48 0 72c18-24 18-40 0-72z" transform="rotate(144 100 100)"/>
+        <path d="M100 28c-18 32-18 48 0 72c18-24 18-40 0-72z" transform="rotate(216 100 100)"/>
+        <path d="M100 28c-18 32-18 48 0 72c18-24 18-40 0-72z" transform="rotate(288 100 100)"/>
+        <circle cx="100" cy="100" r="10" fill="rgba(232, 180, 191, 0.18)" stroke="none"/>
+      </g>
+    </svg>
+    <svg class="page-atmosphere__floral page-atmosphere__floral--2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="rgba(232, 196, 200, 0.14)" class="atmosphere-spin-reverse">
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(60 100 100)"/>
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(120 100 100)"/>
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(240 100 100)"/>
+        <ellipse cx="100" cy="56" rx="28" ry="44" transform="rotate(300 100 100)"/>
+      </g>
+    </svg>
+    <svg class="page-atmosphere__floral page-atmosphere__floral--3" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="rgba(196, 139, 143, 0.2)" stroke-width="0.6" fill="none" opacity="0.85" class="atmosphere-drift-x">
+        <path d="M60 8 Q92 60 60 112 Q28 60 60 8"/>
+        <path d="M8 60 Q60 28 112 60 Q60 92 8 60"/>
+      </g>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="logo" aria-label="Beranda webinar">
+        <span class="logo-mark" aria-hidden="true">UP</span>
+        <span class="logo-text">Upgrade Dirimu</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Buka menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="main-menu" class="main-nav" aria-label="Navigasi utama">
+        <a href="#home">Home</a>
+        <a href="#masalah">Masalah</a>
+        <a href="#materi">Materi</a>
+        <a href="#benefit">Benefit</a>
+        <a href="#narasumber">Narasumber</a>
+        <a href="#info">Info</a>
+        <a href="#tutorial">Tutorial Pengisian</a>
+        <a href="#daftar" class="nav-cta btn-ripple">Daftar Sekarang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home" class="hero section" data-bg="#faf6f0">
+      <div class="hero-bg" aria-hidden="true">
+        <canvas id="heroParticles" class="hero-particles"></canvas>
+        <svg class="hero-wave hero-wave--back" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="waveGradBack" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(196, 139, 143, 0.15)"/>
+              <stop offset="50%" stop-color="rgba(139, 90, 108, 0.12)"/>
+              <stop offset="100%" stop-color="rgba(196, 139, 143, 0.15)"/>
+            </linearGradient>
+          </defs>
+          <path class="wave-path wave-path--a" fill="url(#waveGradBack)" d="M0,192L60,181.3C120,171,240,149,360,154.7C480,160,600,192,720,197.3C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
+        </svg>
+        <svg class="hero-wave hero-wave--front" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="waveGradFront" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(250, 246, 240, 0.85)"/>
+              <stop offset="100%" stop-color="rgba(232, 196, 200, 0.35)"/>
+            </linearGradient>
+          </defs>
+          <path class="wave-path wave-path--b" fill="url(#waveGradFront)" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+        </svg>
+      </div>
+
+      <div class="hero-float-icons" aria-hidden="true">
+        <span class="float-icon float-icon--lamp" data-speed="0.35">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-8.5 0-15 6.2-15 14 0 5.2 2.8 9.7 7 12.3V44h16v-9.7c4.2-2.6 7-7.1 7-12.3 0-7.8-6.5-14-15-14z" stroke="currentColor" stroke-width="2"/><path d="M24 44v6h16v-6M28 56h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="float-icon float-icon--book" data-speed="0.5">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 12h20c4 0 8 3 8 8v36H16V12z" stroke="currentColor" stroke-width="2"/><path d="M16 12H12v44h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 22h12M24 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="float-icon float-icon--laptop" data-speed="0.42">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="14" width="48" height="30" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 48h56l-4-4H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M22 38h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="badge">Webinar Career • Kuota Terbatas</p>
+          <h1 class="hero-title" id="heroTitle">Turning Passion Into Action: shape your future with the right career</h1>
+          <p class="subtitle" id="heroTyping" data-text="Kuliah, Kerja, atau Bangun Usaha?">Kuliah, Kerja, atau Bangun Usaha?</p>
+
+          <div class="countdown" id="countdown" aria-label="Hitung mundur menuju webinar">
+            <p class="countdown-heading">Mulai dalam</p>
+            <div class="countdown-grid">
+              <div class="countdown-unit" data-key="days">
+                <span class="countdown-label">Hari</span>
+                <div class="flip-stage">
+                  <span class="flip-num">00</span>
+                </div>
+              </div>
+              <div class="countdown-unit" data-key="hours">
+                <span class="countdown-label">Jam</span>
+                <div class="flip-stage">
+                  <span class="flip-num">00</span>
+                </div>
+              </div>
+              <div class="countdown-unit" data-key="minutes">
+                <span class="countdown-label">Menit</span>
+                <div class="flip-stage">
+                  <span class="flip-num">00</span>
+                </div>
+              </div>
+              <div class="countdown-unit" data-key="seconds">
+                <span class="countdown-label">Detik</span>
+                <div class="flip-stage">
+                  <span class="flip-num">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-meta">
+            <span>Sabtu, 23 Mei 2026</span>
+            <span>09.00 - 11.30 WIB</span>
+            <span>Live via Zoom</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#daftar" class="btn btn-primary btn-ripple">Daftar Sekarang</a>
+            <a href="#materi" class="btn btn-ghost btn-ripple">Lihat Materi</a>
+          </div>
+        </div>
+        <div class="hero-accent" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="masalah" class="section section-reveal masalah-section" data-parallax="0.06" data-bg="#faf6f0">
+      <div class="masalah-bg" aria-hidden="true">
+        <canvas id="masalahParticles" class="masalah-particles"></canvas>
+      </div>
+      <div class="container">
+        <h2 class="section-title">Masalah yang Sering Dihadapi</h2>
+        <p class="section-lead">Jika salah satu ini menggambarkan situasi Anda, webinar ini dibuat untuk membantu.</p>
+        <ul class="problem-list">
+          <li class="problem-item">
+            <span class="problem-number" aria-hidden="true">1</span>
+            <div class="problem-body">
+              <p class="problem-text">Bingung menentukan langkah setelah lulus: kerja, lanjut studi, atau mulai usaha.</p>
+            </div>
+            <span class="problem-mini-icon" aria-hidden="true">?</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-number" aria-hidden="true">2</span>
+            <div class="problem-body">
+              <p class="problem-text">Merasa punya potensi, tapi belum tahu cara menyusun rencana karier yang jelas.</p>
+            </div>
+            <span class="problem-mini-icon" aria-hidden="true">💡</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-number" aria-hidden="true">3</span>
+            <div class="problem-body">
+              <p class="problem-text">Sering overthinking dan takut salah ambil keputusan penting untuk masa depan.</p>
+            </div>
+            <span class="problem-mini-icon" aria-hidden="true">?</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="materi" class="section section-reveal materi-section" data-parallax="0.05" data-bg="#faf6f0">
+      <div class="materi-bg" aria-hidden="true">
+        <canvas id="materiParticles" class="materi-particles"></canvas>
+      </div>
+      <div class="container">
+        <h2 class="section-title">Materi Webinar</h2>
+        <p class="section-lead">Rangkaian topik dirancang agar Anda pulang dengan langkah konkret.</p>
+        <div class="materi-grid">
+          <article class="materi-card">
+            <span class="materi-num">01</span>
+            <h3 class="materi-title" data-text="Mengenali potensi diri">Mengenali potensi diri</h3>
+            <p class="materi-desc">Pentingnya memahami minat dan kemampuan sebelum menentukan arah karier.</p>
+          </article>
+          <article class="materi-card">
+            <span class="materi-num">02</span>
+            <h3 class="materi-title" data-text="Pilihan pasca lulus">Pilihan pasca lulus</h3>
+            <p class="materi-desc">Pemaparan jalur kuliah, kerja, atau wirausaha setelah lulus SMA/SMK.</p>
+          </article>
+          <article class="materi-card">
+            <span class="materi-num">03</span>
+            <h3 class="materi-title" data-text="Potensi dan jurusan">Potensi &amp; jurusan yang tepat</h3>
+            <p class="materi-desc">Cara menghubungkan potensi diri dengan pilihan jurusan atau bidang pekerjaan.</p>
+          </article>
+          <article class="materi-card">
+            <span class="materi-num">04</span>
+            <h3 class="materi-title" data-text="Rencana karier sejak sekolah">Rencana karier sejak sekolah</h3>
+            <p class="materi-desc">Langkah awal menyusun rencana karier yang realistis dan bisa langsung dijalankan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefit" class="section section-reveal benefit-section" data-parallax="0.07" data-bg="#faf6f0">
+      <div class="benefit-bg" aria-hidden="true">
+        <canvas id="benefitParticles" class="benefit-particles"></canvas>
+      </div>
+      <div class="container">
+        <h2 class="section-title">Benefit untuk Peserta</h2>
+        <div class="benefit-grid">
+          <article class="benefit-card benefit-card--recording" data-benefit="1">
+            <div class="card-icon card-icon--recording" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="16" width="44" height="30" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="24" cy="31" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M38 28l8 3-8 3v-6z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Akses rekaman</h3>
+            <p>Tonton ulang materi utama dalam jangka waktu tertentu.</p>
+          </article>
+          <article class="benefit-card benefit-card--counseling" data-benefit="2">
+            <div class="card-icon card-icon--headset" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 34a18 18 0 1 1 36 0" stroke="currentColor" stroke-width="2"/>
+                <rect x="10" y="34" width="10" height="14" rx="4" stroke="currentColor" stroke-width="2"/>
+                <rect x="44" y="34" width="10" height="14" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 50v4h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Worksheet Karier</h3>
+            <p>Template worksheet untuk memetakan minat, kemampuan, dan rencana aksi pribadi.</p>
+          </article>
+          <article class="benefit-card benefit-card--certificate" data-benefit="3">
+            <div class="card-icon card-icon--certificate" aria-hidden="true">
+              <span class="icon-shine"></span>
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+                <rect x="14" y="10" width="36" height="30" rx="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 22h16M24 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M26 40l6 8 6-8 6 14-12-6-12 6 6-14z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>E-Sertifikat</h3>
+            <p>Bukti partisipasi resmi setelah mengikuti webinar.</p>
+          </article>
+          <article class="benefit-card" data-benefit="4">
+            <div class="card-icon" aria-hidden="true">📝</div>
+            <h3>Tes Minat dan Bakat Sederhana</h3>
+            <p>Melakukan tes sederhana kepada para peserta</p>
+          </article>
+          <article class="benefit-card benefit-card--qa" data-benefit="5">
+            <div class="card-icon" aria-hidden="true">❓</div>
+            <h3>Q&amp;A Interaktif</h3>
+            <p>Sesi tanya jawab langsung untuk membahas kendala karier yang Anda hadapi.</p>
+          </article>
+
+          <article class="materi-webinar-item" aria-label="Materi Webinar Ringkas">
+          <div class="container">
+            <div class="materi-webinar-wrap">
+            <h3>Materi Webinar</h3>
+      <p>
+        Materi Webinar Eksklusif dari psikolog yang akan membahas pengenalan diri, 
+        minat & bakat, serta cara menentukan arah karier sesuai potensi diri.
+      </p>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="narasumber" class="section narasumber-section section-reveal" data-parallax="0.04" data-bg="#faf6f0">
+      <div class="narasumber-bg" aria-hidden="true">
+        <canvas id="narasumberParticles" class="narasumber-particles"></canvas>
+      </div>
+      <div class="container">
+        <h2 class="section-title">Narasumber</h2>
+        <p class="section-lead">Berbagi pengalaman lapangan dan insight yang relevan dengan kebutuhan Anda.</p>
+        <div class="speaker-showcase">
+          <article class="speaker-card">
+            <div class="speaker-photo-wrap">
+              <span class="speaker-micro-icon" aria-hidden="true">✦</span>
+              <div class="speaker-photo speaker-photo--img">
+                <img
+                  class="speaker-photo-img speaker-photo-img--ananda"
+                  src="images/ananda-aminah.png"
+                  alt="Ananda Aminah Aini M.Psi., Ahli Psikologi Industri"
+                  width="480"
+                  height="480"
+                  loading="lazy"
+                  decoding="async"
+                />
+
+                <span class="speaker-photo-shine" aria-hidden="true"></span>
+              </div>
+            </div>
+            <span class="speaker-divider" aria-hidden="true"></span>
+            <div class="speaker-body">
+              <p class="speaker-role has-tooltip speaker-role-tip" data-tooltip="Pembicara utama webinar">Moderator</p>
+              <h3 class="speaker-name has-tooltip speaker-name-tip" data-tooltip="Ahli Psikologi Industri">ANANDA AMINAH AINI M.Psi.</h3>
+              <p class="speaker-bio">Psikolog Arafa Consulting Pendidikan
+Magister Psikologi industri dan organisasi, Universitas Gadjah Mada (2022-2025) - IPK 3.96
+</p>
+            </div>
+          </article>
+          <article class="speaker-card">
+            <div class="speaker-photo-wrap">
+              <span class="speaker-micro-icon" aria-hidden="true">✦</span>
+              <div class="speaker-photo speaker-photo-alt speaker-photo--img">
+                <img
+                  class="speaker-photo-img"
+
+                  src="images/festiana-niyanti.png"
+                  alt="Festiana Niyanti M.Psi., Psikolog Profesional"
+                  width="480"
+
+                  height="480"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="speaker-photo-shine" aria-hidden="true"></span>
+              </div>
+            </div>
+            <span class="speaker-divider" aria-hidden="true"></span>
+            <div class="speaker-body">
+              <p class="speaker-role has-tooltip speaker-role-tip" data-tooltip="Pemandu sesi diskusi">Narasumber</p>
+              <h3 class="speaker-name has-tooltip speaker-name-tip" data-tooltip="Psikolog Profesional">FESTIANA NIYANTI M.Psi.</h3>
+              <p class="speaker-bio">Psikolog Arafa Consulting Pendidikan
+                 Profesi Psikologi, Universitas Gadjah Mada (2022-2025)
+Sarjana Psikologi, Universitas Gadjah Mada (2005-2009)</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="section info-section section-reveal" data-parallax="0.055" data-bg="#faf6f0">
+      <div class="info-bg" aria-hidden="true">
+        <canvas id="infoParticles" class="info-particles"></canvas>
+      </div>
+      <div class="container">
+        <h2 class="section-title info-title"><span id="infoTitleText" data-text="Informasi Acara">Informasi Acara</span><span class="info-title-line" aria-hidden="true"></span></h2>
+        <div class="section-progress info-progress" aria-hidden="true"><span class="section-progress-fill"></span></div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon info-icon--calendar" aria-hidden="true">🗓</div>
+            <h3 class="has-tooltip" data-tooltip="Agenda resmi webinar">Jadwal</h3>
+            <span class="info-divider" aria-hidden="true"></span>
+            <p class="info-main">Sabtu, 23 Mei 2026</p>
+            <p class="info-detail">09.00 – 11.30 WIB</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon info-icon--platform" aria-hidden="true">💻</div>
+            <h3 class="has-tooltip" data-tooltip="Akses dari laptop atau mobile">Platform</h3>
+            <span class="info-divider" aria-hidden="true"></span>
+            <p class="info-main">Online via Zoom</p>
+            <p class="info-detail">Link dikirim ke grup yang sudah daftar</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon info-icon--price" aria-hidden="true">✦</div>
+            <h3 class="has-tooltip" data-tooltip="Sudah termasuk e-sertifikat">Harga</h3>
+            <span class="info-divider" aria-hidden="true"></span>
+            <p class="info-main">Rp 45.000</p>
+            <p class="info-detail">Detail di formulir pendaftaran</p>
+          </div>
+        </div>
+        <div class="info-next-wrap">
+          <a href="#tutorial" class="btn btn-ghost btn-ripple info-next">Lanjut ke Tutorial</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="tutorial" class="section section-reveal tutorial-section" data-parallax="0.065" data-bg="#faf6f0">
+      <div class="container">
+        <h2 class="section-title">Tutorial Pengisian Formulir</h2>
+        <p class="section-lead">Ikuti langkah singkat agar pendaftaran Anda tercatat dengan benar.</p>
+        <div class="section-progress tutorial-progress" aria-hidden="true"><span class="section-progress-fill"></span></div>
+        <ol class="tutorial-steps">
+          <li>
+            <span class="step-num has-tooltip" data-tooltip="Mulai dari tombol CTA">1</span>
+            <div>
+              <h3>Buka tautan Google Form</h3>
+              <p>Klik tombol <strong>Daftar Sekarang</strong> di halaman ini atau di menu navigasi.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num has-tooltip" data-tooltip="Isi data yang valid">2</span>
+            <div>
+              <h3>Isi data diri</h3>
+              <p>Gunakan email aktif dan nomor WhatsApp yang bisa dihubungi panitia.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num has-tooltip" data-tooltip="Pastikan konfirmasi diterima">3</span>
+            <div>
+              <h3>Kirim &amp; periksa email</h3>
+              <p>Setelah submit, cek kotak masuk (dan folder spam) untuk konfirmasi atau langkah berikutnya.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="daftar" class="section cta-section section-reveal" data-parallax="0.03" data-bg="#faf6f0">
+      <div class="container cta-inner">
+        <div class="cta-offer" aria-label="Penawaran harga webinar">
+          <div class="cta-offer-item cta-offer-item--early">
+            <span class="cta-offer-label">Early Bird • 25 orang tercepat</span>
+            <strong class="cta-offer-price">Rp37.000</strong>
+            <a href="https://wa.me/6287780842731" class="btn btn-primary btn-ripple cta-offer-btn" target="_blank" rel="noopener noreferrer">Ambil Early Bird</a>
+          </div>
+        </div>
+        <h2 class="section-title">Siap Bergabung?</h2>
+        <p class="cta-text">Amankan kursi Anda melalui formulir resmi. Proses hanya membutuhkan beberapa menit.</p>
+        <div class="cta-actions">
+          <a href="https://forms.gle/trSwcJMstm7J2AYGA" class="btn btn-primary btn-large btn-ripple" target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
+          <a href="https://wa.me/6287780842731" class="btn btn-ghost btn-large btn-ripple" target="_blank" rel="noopener noreferrer">Hubungi Kami</a>
+        </div>
+      </div>
+    </section>
+
+
+      <div style="display:none" aria-hidden="true">customer service</div>
+
+      <!-- n8n Chat widget (disabled by default on production since webhookUrl must be a real n8n endpoint) -->
+      <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+      <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        // If you have a real webhook endpoint, replace this URL.
+        // Leave disabled by default to avoid runtime errors.
+        const WEBHOOK_URL = '';
+
+        if (WEBHOOK_URL) {
+          createChat({ webhookUrl: WEBHOOK_URL });
+        }
+      </script>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Kontak</h4>
+        <p>Email    : kelompok1.projectwork@gmail.com</p>
+        <p>WhatsApp : <a href="https://wa.me/6287780842731" target="_blank" rel="noopener noreferrer">+62 877-8084-2731</a></p>
+      </div>
+      <div>
+        <h4>Ikuti Kami</h4>
+        <p><a href="https://www.instagram.com/mplbprojects?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram @mplbprojects</a></p>
+      </div>
+      <div>
+        <h4>Catatan</h4>
+        <p>Kuota peserta terbatas. Pastikan Anda mengisi formulir sebelum pendaftaran ditutup.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
+
